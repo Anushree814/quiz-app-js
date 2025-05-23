@@ -56,10 +56,6 @@ QuizMania is an interactive quiz application designed to test your knowledge on 
 - **Questions**: Modify `data.js` to edit or add questions and categories.
 - **Styles**: Update `style.css` to change the appearance.
 
-## Contact
-
-If you have any questions or suggestions, feel free to contact me at [youremail@example.com](mailto:youremail@example.com).
-
 ---
 
 Enjoy testing your skills with QuizMania!
