@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QuizMania</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container" id="app">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="logo">QUIZ<span class="primary">Mania</span></h1>
+        <button id="exit-btn" class="exit-btn" hidden>Exit Quiz</button>
+      </header>
+      <main class="main-content">
+        <!-- Category Selection -->
+        <section id="category-selection" class="category-selection">
+          <h2 class="welcome-title">
+            Welcome to <span class="primary">QUIZMania</span>
+          </h2>
+          <div class="rules-box" role="region" aria-label="Quiz Rules">
+            <p>Please read all the rules about this quiz before you start.</p>
+            <a
+              href="#"
+              class="rules-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Quiz rules</a
+            >
+            <!---Quiz rules Modal-->
+            <div id="rules-modal" class="modal" hidden>
+                <div class="modal-content">
+                  <button class="close-btn" id="close-modal">&times;</button>
+                  <h2>Quiz Rules</h2>
+                  <div class="rules-section">
+                    <h3>10-Second Timer</h3>
+                    <ul>
+                      <li>Each question comes with a 10-second timer.</li>
+                      <li>If you don’t answer within the time limit, the app will automatically move to the next question.</li>
+                    </ul>
+                  </div>
+                  <div class="rules-section">
+                    <h3>Manual Navigation</h3>
+                    <ul>
+                      <li>You can navigate to the next question manually before the timer expires.</li>
+                      <li>Use the "Next" button to move ahead if you’re ready before the timer runs out.</li>
+                    </ul>
+                  </div>
+                  <div class="rules-section">
+                    <h3>Final Score and Performance Message</h3>
+                    <ul>
+                      <li>After all questions are answered, your final score will be displayed.</li>
+                      <li>Based on your performance, you will receive a personalized message:</li>
+                      <ul>
+                        <li><strong>Great job!</strong> If you score above 80%.</li>
+                        <li><strong>Well done!</strong> If you score between 60% and 80%.</li>
+                        <li><strong>Keep practicing!</strong> If you score below 60%.</li>
+                      </ul>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <form id="start-form">
+            <label for="fullname" class="label">Full name</label>
+            <input
+              autocomplete="name"
+              id="fullname"
+              name="fullname"
+              class="input-text"
+              type="text"
+              placeholder="Full name"
+              required
+            />
+
+            <fieldset class="topic-group">
+              <legend class="label">Please select topic to continue</legend>
+              <div
+                class="topics-grid"
+                role="radiogroup"
+                aria-labelledby="topic-legend"
+              >
+                <label class="topic-btn">
+                  <input type="radio" name="topic" value="js_basics" required />
+                  <span>Javascript Basic</span>
+                </label>
+                <label class="topic-btn">
+                  <input type="radio" name="topic" value="angular_basic" />
+                  <span>Angular Basic</span>
+                </label>
+                <label class="topic-btn">
+                  <input type="radio" name="topic" value="react_advance" />
+                  <span>React.js Advance</span>
+                </label>
+                <label class="topic-btn">
+                  <input type="radio" name="topic" value="flutter" />
+                  <span>Flutter</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn primary-btn start-btn">
+              Start Quiz
+            </button>
+          </form>
+        </section>
+
+        <!-- Quiz Container -->
+        <section id="quiz-container" class="quiz-container" hidden>
+          <div id="quiz-progress" class="quiz-progress">
+            <div class="quiz-header">
+              <div class="progress-info">
+                <span id="question-number" class="question-number">1</span> /
+                <span id="total-questions" class="total-questions">10</span>
+              </div>
+              <progress
+                id="progress-bar"
+                value="0"
+                max="10"
+                class="progress-bar"
+              ></progress>
+              <div
+                id="timer"
+                class="timer"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                0:10
+              </div>
+            </div>
+          </div>
+          <div class="quiz-question-container">
+            <div id="quiz-question" class="quiz-question" tabindex="0"></div>
+            <form
+              id="options-form"
+              class="options-form"
+              aria-labelledby="quiz-question"
+            >
+              <!-- Options inserted by JS -->
+            </form>
+          </div>
+          <div class="quiz-buttons" id="quiz-buttons" hidden>
+            <button id="next-btn" class="btn primary-btn">Next</button>
+            <button id="skip-btn" class="btn skip-btn">
+              Skip this question
+            </button>
+          </div>
+        </section>
+
+        <!-- Result Container -->
+        <section id="result-container" class="result-container" hidden>
+            <div id="result-icon" class="result-icon"></div>
+            <h2 id="result-title">CONGRATULATIONS</h2>
+            <p id="result-message">You successfully completed the Quiz and you need to</p>
+            <div id="result-feedback" class="result-feedback">KEEP PRACTICING!</div>
+            <div id="result-score">
+              <span>Your Score</span>
+              <span id="result-percentage" class="result-percentage">32%</span>
+            </div>
+            <div id="result-details" class="result-details">
+              <span>Out of <span id="total-questions-detail">10</span> questions</span>
+              <div class="result-types">
+              <span id="correct-detail" class="result-detail correct">3 Correct</span>
+              <span id="incorrect-detail" class="result-detail incorrect">4 Incorrect</span>
+              <span id="unanswered-detail" class="result-detail unanswered">3 Not answered</span>
+            </div>
+            </div>
+            <button id="retake-quiz-btn" class="btn primary-btn retake-quiz-btn">
+              Retake Quiz
+            </button>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

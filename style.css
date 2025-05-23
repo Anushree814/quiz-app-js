@@ -1,0 +1,722 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --primary-color: #a2364a;
+  --primary-light: #d69ca6;
+  --primary-dark: #6f2333;
+  --text-dark: #1e1e1e;
+  --text-muted: #4f4789;
+  --background: #f6f2e9;
+  --background-white: #fefefe;
+  --border-radius: 12px;
+  --spacing: 20px;
+  --font-family: "Poppins", sans-serif;
+  --transition: 0.25s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0; /* Remove default padding */
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+
+  /* Center container vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  max-width: none; /* Remove max-width */
+  max-height: none; /* Remove max-height */
+  border-radius: 0; /* Remove or reduce border radius if needed */
+  padding: 40px 32px 48px; /* Optionally reduce padding for full usage */
+  box-shadow: none; /* Remove shadow for full bleed */
+  display: flex;
+  flex-direction: column;
+  background: var(--background-white);
+  overflow-y: auto; /* Enable scrolling for smaller heights */
+  box-sizing: border-box;
+  padding-top: 80px;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--background-white);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.07em;
+  margin: 0;
+  user-select: none;
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+/* Exit button styling */
+.exit-btn {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 6px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  user-select: none;
+}
+
+.exit-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--background-white);
+}
+
+/* Welcome title */
+.welcome-title {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 32px;
+}
+/* Main content fills remaining space below header */
+.main-content {
+  flex-grow: 1; /* Take all height except header */
+  padding-top: 56px; /* header height to avoid overlap */
+  display: flex;
+  justify-content: center; /* horizontally center */
+  align-items: center; /* vertically center */
+  overflow-y: auto; /* scroll if content too tall */
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Category Selection centered with spacing */
+.category-selection {
+  width: 480px;
+  max-width: 90vw;
+  padding: 80px 40px 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+}
+
+/* Responsive for small screens */
+@media (max-width: 520px) {
+  .category-selection {
+    width: 90vw;
+    padding: 50px 20px 60px;
+  }
+
+  .header {
+    padding: 0 16px;
+  }
+}
+/* Rules box */
+.rules-box {
+  background: #e8e6e19e;
+  padding: 18px 16px;
+  border-radius: var(--border-radius);
+  margin-bottom: 32px;
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 420px;
+}
+
+.rules-box p {
+  margin: 0 0 6px;
+}
+
+.rules-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rules-link:hover {
+  text-decoration: underline;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Blur background */
+  }
+  
+  .modal-content {
+    background: var(--background-white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    width: 80%;
+    max-width: 600px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-muted);
+  }
+  
+  .rules-section {
+    margin-bottom: 20px;
+  }
+  
+  h2, h3 {
+    color: var(--text-dark);
+    margin-top: 0;
+  }
+  
+  h3 {
+    background: #f8f8f8;
+    padding: 8px;
+    border-radius: var(--border-radius);
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  @media (max-width: 520px) {
+    .modal-content {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+
+/* Form elements */
+.label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--text-muted);
+}
+
+.input-text {
+  width: 100%;
+  border-radius: var(--border-radius);
+  border: 1px solid #b7b7b7;
+  padding: 12px 16px;
+  font-size: 1rem;
+  margin-bottom: 26px;
+  color: var(--text-dark);
+  font-weight: 600;
+  outline-offset: 3px;
+  transition: border-color var(--transition);
+}
+
+.input-text::placeholder {
+  color: #a59ea9;
+  font-weight: 400;
+}
+
+.input-text:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Topic group container */
+.topic-group {
+    margin-bottom: 28px;
+    border: none;
+    padding: 0;
+  }
+  
+  /* Grid for topic buttons */
+  .topics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 22px;
+  }
+  
+  /* Style each topic button label */
+  .topic-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1.5px solid #e2ddd9;
+    border-radius: var(--border-radius);
+    padding: 12px 24px 12px 48px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #6b7280; /* var(--text-muted) */
+    user-select: none;
+    background: #fefefe;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Hide the native radio input */
+  .topic-btn input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  /* Custom radio appearance */
+  .topic-btn::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #b2a9b7;
+    background-color: #fff;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    z-index: 1;
+  }
+  
+  /* Inner dot when checked */
+  .topic-btn input[type="radio"]:checked + span::after {
+    content: "";
+    position: absolute;
+    left: 21px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    z-index: 3;
+  }
+  
+  /* Style label text when checked */
+  .topic-btn input[type="radio"]:checked + span {
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  /* Because you have no span currently wrapping text, wrap label text in <span> */
+  
+  /* Hover effect on label */
+  .topic-btn:hover {
+    border-color: var(--primary-light);
+    color: var(--primary-color);
+  }
+  
+  /* Optional: make label text not selectable */
+  .topic-btn > span {
+    user-select: none;
+    pointer-events: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 520px) {
+    .topics-grid {
+      grid-template-columns: 1fr;
+    }
+    .topic-btn {
+      padding-left: 42px;
+    }
+  }
+
+/* Primary button */
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--transition), color var(--transition);
+  border: none;
+  color: var(--background-white);
+  padding: 14px 30px;
+  font-size: 1.125rem;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+}
+
+.primary-btn:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.primary-btn:disabled {
+  background-color: var(--primary-light);
+  cursor: not-allowed;
+}
+
+/* Start button */
+.start-btn {
+  margin-top: 6px;
+  width: 160px;
+  display: block;
+}
+
+/* Quiz Container styles */
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Quiz Header */
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+/* Add top margin to quiz progress to appear below fixed header */
+.quiz-progress {
+  margin-top: 56px; /* height of fixed header */
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.quiz-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  margin-top: 32px;
+}
+#quiz-progress,
+#quiz-buttons {
+  display: none;
+}
+.progress-info {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 8px;
+  margin: 0 20px;
+  border-radius: 12px;
+  accent-color: var(--primary-color);
+  background-color: #e8e6e19e;
+  border: none;
+}
+
+.timer {
+  font-weight: 600;
+  font-size: 1rem;
+  background: #e2ddd9;
+  color: var(--primary-dark);
+  padding: 7px 13px;
+  border-radius: var(--border-radius);
+  min-width: 48px;
+  text-align: center;
+  user-select: none;
+}
+
+/* Question */
+.quiz-question {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 28px;
+  color: var(--text-dark);
+}
+
+/* Options Form */
+.options-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+/* Option item */
+.option-label {
+  position: relative;
+  cursor: pointer;
+  border: 1.5px solid #e2ddd9;
+  border-radius: var(--border-radius);
+  padding: 20px 24px 20px 56px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-muted);
+  user-select: none;
+  transition: border-color var(--transition), background-color var(--transition),
+    box-shadow var(--transition);
+}
+
+/* Hide native radio */
+.option-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1.5px solid #e2ddd9;
+    border-radius: var(--border-radius);
+    padding: 20px 24px 20px 56px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-muted);
+    user-select: none;
+    transition: border-color var(--transition), background-color var(--transition), box-shadow var(--transition);
+  }
+  
+  /* Hide the native radio button */
+  .option-label input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  /* Custom radio circle */
+  .option-label::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2.5px solid #9e8c91;
+    border-radius: 50%;
+    background: transparent;
+    transition: border-color var(--transition), background-color var(--transition);
+  }
+  
+  /* Show inner dot when checked */
+  .option-label input[type="radio"]:checked + span::after {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    z-index: 3;
+  }
+  
+  /* Style label text when checked */
+  .option-label input[type="radio"]:checked + span {
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+ 
+/* Simplified: Use span for option text to style based on input checked */
+.option-label span {
+  pointer-events: none;
+}
+
+/* On hover */
+.option-label:hover {
+  border-color: var(--primary-light);
+  box-shadow: inset 0 0 12px var(--primary-light);
+}
+
+/* Selected state styling for correctness */
+.option-label.correct {
+  border-color: #22c55e;
+  background-color: #dcfce7;
+  font-weight: 700;
+  color: #166534;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.3);
+}
+
+.option-label.incorrect {
+  border-color: #ef4444;
+  background-color: #fee2e2;
+  font-weight: 700;
+  color: #b91c1c;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Disabled */
+.option-label.disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+/* Footer buttons */
+.quiz-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.skip-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: underline;
+  user-select: none;
+  padding: 0;
+}
+
+.skip-btn:hover {
+  color: var(--primary-color);
+}
+
+/* Result Container */
+.result-container {
+    text-align: center;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .result-icon {
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .result-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: var(--text-dark);
+  }
+  
+  .result-message {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+  }
+  
+  .result-feedback {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 20px 0;
+  }
+  
+  .result-score {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .result-percentage {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .result-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+  .result-types{
+    display:flex;
+    gap: 1rem
+  }
+  
+  .result-detail.correct {
+    color: green;
+  }
+  
+  .result-detail.incorrect {
+    color: red;
+  }
+  
+  .result-detail.unanswered {
+    color: #b0b0b0;
+  }
+  
+  .retake-quiz-btn {
+    margin-top: 30px;
+    width: 190px;
+  }
+
+
+
+/* Responsive */
+@media (max-width: 520px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 20px 32px;
+  }
+  .topics-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .topic-btn {
+    padding: 14px 20px;
+  }
+  .quiz-container {
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .start-btn,
+  .restart-btn {
+    width: 100%;
+  }
+  .exit-btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}

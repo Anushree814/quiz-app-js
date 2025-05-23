@@ -1,0 +1,495 @@
+// data.js
+export const quizData = {
+  categories: [
+    {
+      id: "js_basics",
+      name: "JavaScript Basics",
+      questions: [
+        {
+          id: "q1",
+          question:
+            "What is the correct syntax for referring to an external script called 'script.js'?",
+          options: [
+            "A. <script name='script.js'>",
+            "B. <script href='script.js'>",
+            "C. <script src='script.js'>",
+            "D. <script file='script.js'>",
+          ],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q2",
+          question: "Which company developed JavaScript?",
+          options: ["A. Microsoft", "B. Netscape", "C. Google", "D. Mozilla"],
+          correctAnswer: "B",
+          timeLimit: 10,
+        },
+        {
+          id: "q3",
+          question: "What does 'DOM' stand for in JavaScript?",
+          options: [
+            "A. Document Object Model",
+            "B. Data Object Model",
+            "C. Document Oriented Model",
+            "D. Data-Oriented Model",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q4",
+          question: "Which of the following is a JavaScript data type?",
+          options: [
+            "A. Number",
+            "B. Boolean",
+            "C. String",
+            "D. All of the above",
+          ],
+          correctAnswer: "D",
+          timeLimit: 10,
+        },
+        {
+          id: "q5",
+          question: "Which symbol is used for comments in JavaScript?",
+          options: [
+            "A. // for single-line comments",
+            "B. <!-- for single-line comments",
+            "C. /* for single-line comments",
+            "D. # for single-line comments",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q6",
+          question: "How do you create a function in JavaScript?",
+          options: [
+            "A. function = myFunction()",
+            "B. function myFunction()",
+            "C. def myFunction()",
+            "D. Function:myFunction()",
+          ],
+          correctAnswer: "B",
+          timeLimit: 10,
+        },
+        {
+          id: "q7",
+          question:
+            "Which event occurs when the user clicks on an HTML element?",
+          options: [
+            "A. onmouseover",
+            "B. onchange",
+            "C. onclick",
+            "D. onmouseclick",
+          ],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q8",
+          question: "How can you add a comment in a JavaScript file?",
+          options: [
+            "A. <!-- This is a comment -->",
+            "B. 'This is a comment",
+            "C. // This is a comment",
+            "D. \\' This is a comment",
+          ],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q9",
+          question: "How do you declare a variable in JavaScript?",
+          options: [
+            "A. var myVar",
+            "B. def myVar",
+            "C. variable myVar",
+            "D. myVar",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q10",
+          question: "Which operator is used to assign a value to a variable?",
+          options: ["A. *", "B. -", "C. x", "D. ="],
+          correctAnswer: "D",
+          timeLimit: 10,
+        },
+      ],
+    },
+    {
+      id: "react_advance",
+      name: "React Advance",
+      questions: [
+        {
+          id: "q1",
+          question: "What is the purpose of React's useMemo hook?",
+          options: [
+            "A. To optimize performance by memoizing the result of calculations",
+            "B. To manage side effects in function components",
+            "C. To create a context for data passing",
+            "D. To handle event listeners",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q2",
+          question: "How can you apply default props in functional components?",
+          options: [
+            "A. Using defaultProps property",
+            "B. Using default parameters in function",
+            "C. Using prop-types package",
+            "D. All of the above",
+          ],
+          correctAnswer: "B",
+          timeLimit: 10,
+        },
+        {
+          id: "q3",
+          question:
+            "What is the key benefit of using React.lazy() with Suspense?",
+          options: [
+            "A. It enables server-side rendering",
+            "B. It allows code splitting by dynamically loading components",
+            "C. It provides state management",
+            "D. It simplifies routing",
+          ],
+          correctAnswer: "B",
+          timeLimit: 10,
+        },
+        {
+          id: "q4",
+          question:
+            "Which method is used to hydrate a React application in an SSR scenario?",
+          options: [
+            "A. ReactDOM.render()",
+            "B. ReactDOM.hydrate()",
+            "C. ReactDOM.createRoot()",
+            "D. ReactDOM.ssr()",
+          ],
+          correctAnswer: "B",
+          timeLimit: 10,
+        },
+        {
+          id: "q5",
+          question: "What is a higher-order component in React?",
+          options: [
+            "A. A function that takes a component and returns a component",
+            "B. A class that extends another class",
+            "C. A component that converts props to state",
+            "D. A component that triggers lifecycle methods",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q6",
+          question:
+            "How can you prevent re-renders for an unchanged component?",
+          options: [
+            "A. By using React.memo()",
+            "B. By using useEffect()",
+            "C. By using a pure component",
+            "D. Both A and C",
+          ],
+          correctAnswer: "D",
+          timeLimit: 10,
+        },
+        {
+          id: "q7",
+          question: "What is the purpose of React's useReducer hook?",
+          options: [
+            "A. To manage state via reducers",
+            "B. To perform side effects",
+            "C. To create context",
+            "D. To handle form validation",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q8",
+          question: "Which statement about React context is true?",
+          options: [
+            "A. Context is designed to replace Redux",
+            "B. Context provides a way to share values between components without passing props",
+            "C. Context should be used for all state management",
+            "D. Context is best used for local component state",
+          ],
+          correctAnswer: "B",
+          timeLimit: 10,
+        },
+        {
+          id: "q9",
+          question:
+            "Which hook is used for managing local component state in React?",
+          options: [
+            "A. useState",
+            "B. useEffect",
+            "C. useContext",
+            "D. useReducer",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q10",
+          question: "React components should start with a _____",
+          options: [
+            "A. small letter",
+            "B. capital letter",
+            "C. number",
+            "D. underscore",
+          ],
+          correctAnswer: "B",
+          timeLimit: 10,
+        },
+      ],
+    },
+    {
+      id: "angular_basic",
+      name: "Angular Basic",
+      questions: [
+        {
+          id: "q1",
+          question: "What is Angular primarily used for?",
+          options: [
+            "A. Building server-side applications",
+            "B. Building desktop applications",
+            "C. Building mobile applications",
+            "D. Building dynamic web applications",
+          ],
+          correctAnswer: "D",
+          timeLimit: 10,
+        },
+        {
+          id: "q2",
+          question: "What is a component in Angular?",
+          options: [
+            "A. A class responsible for server communication",
+            "B. A directive used for data binding",
+            "C. A class with a template and metadata",
+            "D. A module encapsulating services",
+          ],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q3",
+          question: "Which decorator is used to define a component in Angular?",
+          options: [
+            "A. @Injectable",
+            "B. @NgModule",
+            "C. @Directive",
+            "D. @Component",
+          ],
+          correctAnswer: "D",
+          timeLimit: 10,
+        },
+        {
+          id: "q4",
+          question: "What is Angular CLI used for?",
+          options: [
+            "A. To write CSS",
+            "B. To manage state",
+            "C. To simplify Angular project creation and management",
+            "D. To handle HTTP requests",
+          ],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q5",
+          question: "What is the purpose of a service in Angular?",
+          options: [
+            "A. To create reusable logic that can be shared across components",
+            "B. To define component templates",
+            "C. To handle component interactivity",
+            "D. To provide CSS styling",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q6",
+          question: "How is data binding achieved in Angular templates?",
+          options: [
+            "A. Using directives like ngModel",
+            "B. Using CSS selectors",
+            "C. Using event listeners",
+            "D. All of the above",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q7",
+          question: "Which of the following is a structural directive?",
+          options: ["A. ngStyle", "B. ngModel", "C. ngIf", "D. ngClass"],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q8",
+          question: "What is a module in Angular?",
+          options: [
+            "A. A place to declare components and export functionality",
+            "B. A styling package",
+            "C. A service provider",
+            "D. A lifecycle hook",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q9",
+          question:
+            "Which CLI command is used to create a new Angular component?",
+          options: [
+            "A. ng create component",
+            "B. ng new component",
+            "C. ng generate component",
+            "D. ng init component",
+          ],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q10",
+          question: "What does the 'ngModel' directive do?",
+          options: [
+            "A. It binds HTML forms with Angular templates for two-way data binding",
+            "B. It applies conditional styles to elements",
+            "C. It renders a template based on the condition",
+            "D. It adds animation to elements",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+      ],
+    },
+    {
+      id: "flutter",
+      name: "Flutter",
+      questions: [
+        {
+          id: "q1",
+          question: "What is Flutter primarily used for?",
+          options: [
+            "A. Web development",
+            "B. Desktop applications",
+            "C. Cross-platform mobile app development",
+            "D. Backend development",
+          ],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q2",
+          question: "Which programming language is used to write Flutter apps?",
+          options: ["A. Java", "B. Kotlin", "C. Dart", "D. Swift"],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q3",
+          question: "What is a StatefulWidget in Flutter?",
+          options: [
+            "A. A widget that describes a part of the user interface",
+            "B. A widget that does not require mutable state",
+            "C. A widget that has mutable state",
+            "D. A widget that manages themes",
+          ],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q4",
+          question: "How can you add a package in Flutter?",
+          options: [
+            "A. Edit the index.html file",
+            "B. Modify pubspec.yaml file",
+            "C. Change main.dart file",
+            "D. Use package manager software",
+          ],
+          correctAnswer: "B",
+          timeLimit: 10,
+        },
+        {
+          id: "q5",
+          question:
+            "What is the role of the build() method in a Flutter widget?",
+          options: [
+            "A. To initialize state",
+            "B. To set UI animations",
+            "C. To update the UI configuration",
+            "D. To describe how to display the widget in the UI",
+          ],
+          correctAnswer: "D",
+          timeLimit: 10,
+        },
+        {
+          id: "q6",
+          question:
+            "Which widget is used to lay children in a vertical or horizontal array?",
+          options: [
+            "A. Container",
+            "B. Row and Column",
+            "C. Stack",
+            "D. ListView",
+          ],
+          correctAnswer: "B",
+          timeLimit: 10,
+        },
+        {
+          id: "q7",
+          question:
+            "Which method is used to display a message in a popup in Flutter?",
+          options: [
+            "A. showDialog()",
+            "B. showPopup()",
+            "C. showSnackbar()",
+            "D. showToast()",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+        {
+          id: "q8",
+          question: "What is the purpose of the Navigator in Flutter?",
+          options: [
+            "A. To manage the state of the app",
+            "B. To draw shapes and graphics",
+            "C. To manage routes and screen navigation",
+            "D. To handle user input and gestures",
+          ],
+          correctAnswer: "C",
+          timeLimit: 10,
+        },
+        {
+          id: "q9",
+          question:
+            "Which widget can be used to add padding around another widget?",
+          options: ["A. SizedBox", "B. Padding", "C. Margin", "D. Align"],
+          correctAnswer: "B",
+          timeLimit: 10,
+        },
+        {
+          id: "q10",
+          question: "How do you define a rounded button in Flutter?",
+          options: [
+            "A. Setting shape property in a ButtonStyle",
+            "B. Using a specific RoundedButton class",
+            "C. By wrapping a button widget in a Rounder",
+            "D. Applying a border-radius in CSS",
+          ],
+          correctAnswer: "A",
+          timeLimit: 10,
+        },
+      ],
+    },
+  ],
+};
