@@ -229,6 +229,7 @@ function highlightCorrectness() {
 
 function showScore() {
   quizContainer.hidden = true;
+  quizContainer.style.display = "none";
   categorySelection.hidden = true;
   categorySelection.style.display = "none";
   resultContainer.hidden = false;
@@ -237,6 +238,7 @@ function showScore() {
 
   const total = currentCategory.questions.length;
   const correctCount = userAnswers.filter((a) => a.correct).length;
+  console.log(correctCount, userAnswers)
   const incorrectCount =
     total -
     correctCount -
@@ -263,15 +265,15 @@ function showScore() {
   if (percentage >= 80) {
     feedback = "Great job!";
     document.getElementById("result-icon").style.backgroundImage =
-      "url('path/to/happy-icon.png')";
+      "url('/Users/ana/Documents/Technical/my-code-work/practise/react-tasks/quiz-app-js/smile.png')";
   } else if (percentage >= 60) {
     feedback = "Well done!";
     document.getElementById("result-icon").style.backgroundImage =
-      "url('path/to/neutral-icon.png')";
+      "url('/Users/ana/Documents/Technical/my-code-work/practise/react-tasks/quiz-app-js/smiling-face.png')";
   } else {
     feedback = "Keep practicing!";
     document.getElementById("result-icon").style.backgroundImage =
-      "url('path/to/sad-icon.png')";
+      "url('/Users/ana/Documents/Technical/my-code-work/practise/react-tasks/quiz-app-js/meh.png')";
   }
 
   document.getElementById("result-feedback").textContent = feedback;
